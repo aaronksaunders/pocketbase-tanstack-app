@@ -1,50 +1,88 @@
-# React + TypeScript + Vite
+# Contact Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for managing contacts with authentication, real-time updates, and a responsive interface.
 
-Currently, two official plugins are available:
+## Technology Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
 
-## Expanding the ESLint configuration
+- **React 18** - UI library
+- **TanStack Router** - Type-safe routing with built-in search params handling
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Static typing and enhanced developer experience
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Backend
 
-- Configure the top-level `parserOptions` property like this:
+- **PocketBase** - Open source backend with:
+  - Real-time database
+  - Authentication
+  - File storage
+  - Auto-generated APIs
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- 🔐 Secure authentication (login/register)
+- 📱 Responsive design
+- 📝 CRUD operations for contacts
+- 📊 Pagination
+- 🔍 Search functionality
+- 🚀 Real-time updates
+- 🎨 Clean, modern UI
+
+## Getting Started
+
+1. Clone the repository:
+
+```
+git clone [your-repo-url]
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm install
+```
+
+3. Start PocketBase server:
+
+```
+./pocketbase serve
+```
+
+4. Start the development server:
+
+```
+npm run dev
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── routes/         # TanStack Router route definitions
+│   ├── lib/           # Utilities and configurations
+│   └── types/         # TypeScript type definitions
+├── public/            # Static assets
+└── pocketbase/       # PocketBase configuration
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_POCKETBASE_URL=http://127.0.0.1:8090
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
