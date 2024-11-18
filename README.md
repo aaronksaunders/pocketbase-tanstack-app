@@ -7,13 +7,13 @@ A modern web application for managing contacts with authentication, real-time up
 ### Frontend
 
 - **React 18** - UI library
-- **TanStack Router** - Type-safe routing with built-in search params handling
+- **[TanStack Router v1](https://tanstack.com/router/v1)** - Type-safe routing with built-in search params handling
 - **Tailwind CSS** - Utility-first CSS framework
 - **TypeScript** - Static typing and enhanced developer experience
 
 ### Backend
 
-- **PocketBase** - Open source backend with:
+- **[PocketBase](https://pocketbase.io/)** - Open source backend with:
   - Real-time database
   - Authentication
   - File storage
@@ -43,13 +43,24 @@ git clone [your-repo-url]
 npm install
 ```
 
-3. Start PocketBase server:
+3. Install PocketBase:
+
+   - Visit [PocketBase Downloads](https://pocketbase.io/docs/)
+   - Download the appropriate version for your OS
+   - Extract the zip file
+   - Move the `pocketbase` executable to your project root
+
+4. Start PocketBase server:
 
 ```
 ./pocketbase serve
 ```
 
-4. Start the development server:
+- Access PocketBase Admin UI at: http://127.0.0.1:8090/_/
+- Create an admin account on first run
+- Import the provided schema from `pb_schema.json` (if available)
+
+5. Start the development server:
 
 ```
 npm run dev
@@ -74,6 +85,11 @@ Create a `.env` file in the root directory:
 ```env
 VITE_POCKETBASE_URL=http://127.0.0.1:8090
 ```
+
+## Documentation Links
+
+- [TanStack Router Documentation](https://tanstack.com/router/v1/docs/overview)
+- [PocketBase Documentation](https://pocketbase.io/docs/)
 
 ## Contributing
 
