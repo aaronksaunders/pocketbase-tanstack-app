@@ -10,24 +10,16 @@ type PageSearch = {
 export const Route = createFileRoute("/_auth/home/dashboard")({
   component: RouteComponent,
   // beforeLoad: ({ context, search }) => {
-  //   const searchParams = search as PageSearch;
-  //   console.log("searchParams", searchParams, context);
-  //   return {
-  //     searchParams,
-  //   };
-  // },
-  validateSearch: (search): PageSearch =>
-    ({
-      page: Number(search?.page ?? 1),
-      perPage: Number(search?.perPage ?? 10),
-    }) as PageSearch,
-  // @ts-ignore
-  loaderDeps: ({ search }: { search: PageSearch }) =>
-    ({
-      page: search.page ?? 1,
-      perPage: search.perPage ?? 10,
-    }) as PageSearch,
-  loader: async ({ deps }: { deps: PageSearch }) => {
+
+  validateSearch: (search): PageSearch => ({
+    page: Number(search?.page ?? 1),
+    perPage: Number(search?.perPage ?? 10),
+  }),
+  loaderDeps: ({ search }) => ({
+    page: search.page ?? 1,
+    perPage: search.perPage ?? 10,
+  }),
+  loader: async ({ deps }) => {
     const { page, perPage } = deps;
     console.log("page", page, "perPage", perPage);
 

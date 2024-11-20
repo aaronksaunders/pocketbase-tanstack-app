@@ -56,9 +56,9 @@ npm install
 ./pocketbase serve
 ```
 
-- Access PocketBase Admin UI at: http://127.0.0.1:8090/_/
-- Create an admin account on first run
-- Import the provided schema from `pb_schema.json` (if available)
+    - Access PocketBase Admin UI at: http://127.0.0.1:8090/_/
+    - Create an admin account on first run
+    - Import the provided schema from `pb_schema.json` (if available)
 
 5. Start the development server:
 
